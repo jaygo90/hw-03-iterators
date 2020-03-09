@@ -43,6 +43,12 @@ console.log('Problem 1:')
 
 // Add your code below this line
 
+const firstWhigPresident = presidents.find(function (objectPresident) {
+  return objectPresident.party === 'Whig'
+})
+
+console.log(firstWhigPresident.president)
+
 // Add your code above this line
 
 /** added for formatting purposes **/
@@ -65,6 +71,14 @@ Expected Result Shape: An array of objects (with each object representing a pres
 console.log('Problem 2:')
 
 // Add your code below this line
+
+
+const getFullName = presidents.map((objectPresident) => {
+  if (objectPresident.president.split(" ")[0] === "James") {
+    return objectPresident.president
+  }
+})
+console.log(getFullName)
 
 // Add your code above this line
 
@@ -93,6 +107,13 @@ console.log('Problem 3:')
 
 // Add your code below this line
 
+const presidentialParties = presidents.map(function (objectPresident) {
+  return objectPresident.party
+})
+
+console.log(presidentialParties)
+
+
 // Add your code above this line
 
 /** added for formatting purposes **/
@@ -114,6 +135,21 @@ Expected Result Shape: An array of objects (with each object representing a pres
 console.log('Problem 4:')
 
 // Add your code below this line
+
+
+const presidentsBetween1850and1900 = presidents.filter(function (objectPresident) {
+  const yearTookOffice = parseInt(objectPresident.took_office.substring(0,4));
+
+     if (yearTookOffice > 1850 && yearTookOffice < 1900) {
+        return true;
+     }
+     else {
+        return false;
+     }
+  })
+console.log(presidentsBetween1850and1900)
+
+
 
 // Add your code above this line
 
@@ -138,6 +174,12 @@ console.log('Problem 5:')
 
 // Add your code below this line
 
+const livingPresidents = presidents.filter(function (objectPresident) {
+  return objectPresident.death_year === null
+})
+
+console.log(livingPresidents)
+
 // Add your code above this line
 
 /** added for formatting purposes **/
@@ -161,6 +203,12 @@ console.log('Problem 6:')
 
 // Add your code below this line
 
+const firstRepublican = presidents.find(function (objectPresident) {
+  return objectPresident.party === 'Republican'
+})
+
+console.log(firstRepublican.president)
+
 // Add your code above this line
 
 /** added for formatting purposes **/
@@ -183,6 +231,13 @@ Expected Result Shape: An array of objects (with each object representing a pres
 console.log('Problem 7:')
 
 // Add your code below this line
+
+const shortTermPresidents = presidents.filter((objectPresident) => {
+  const lessThanFourYears = objectPresident.took_office.split(',')
+  return lessThanFourYears.length <= 4
+})
+
+console.log(shortTermPresidents)
 
 // Add your code above this line
 
